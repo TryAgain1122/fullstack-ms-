@@ -7,7 +7,7 @@ const EmployeeDetail = () => {
     const [employee, setEmployee] = useState([])
     const { id } = useParams()
     useEffect(() => {
-        axios.get(`https://backend-k8aw.onrender.com/employee/detail/${id}`)
+        axios.get(`https://backend-api-uo05.onrender.com/employee/detail/${id}`)
         .then(result => {
             setEmployee(result.data[0])
         })
@@ -15,7 +15,7 @@ const EmployeeDetail = () => {
     },[])
     
     const handleLogout = () => {
-        axios.get('https://backend-k8aw.onrender.com/employee/logout')
+        axios.get('https://backend-api-uo05.onrender.com/employee/logout')
         .then(result => {
             if (result.data.Status) {
                 localStorage.removeItem("valid", true)
@@ -30,7 +30,7 @@ const EmployeeDetail = () => {
         <div className="flex flex-col items-center">
           <img 
             className="w-24 h-24 rounded-full shadow-lg object-cover" 
-            src={`https://backend-k8aw.onrender.com/Images/${employee.image}`}
+            src={`https://backend-api-uo05.onrender.com/Images/${employee.image}`}
             alt="Profile" 
           />
           <p className="mt-2 text-gray-600">Work id: {employee.category_id}</p>
