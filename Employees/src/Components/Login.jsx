@@ -17,10 +17,8 @@ export const Login = () => {
                 if (result.data.loginStatus) {
                     localStorage.setItem("valid", true)
                     navigate('/dashboard')
-                    setValues('')
                 } else {
                     setError(result.data.Error)
-                    setValues('')
                 }
             })
             .catch(err => console.log(err))

@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-import { adminRouter } from './routes/AdminRoute.js';
+import { adminRouter } from './routes/AdminRoute.js'
 import { EmployeeRouter } from './routes/EmployeeRoute.js';
 import Jwt from "jsonwebtoken"
 import cookieParser from 'cookie-parser';
