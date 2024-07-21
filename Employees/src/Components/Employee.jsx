@@ -85,7 +85,7 @@ const Employee = () => {
                       <MdDelete size={20} />
                     </button>
                     <Link
-                      to={`/dashboard/edit_employee/`+ e.id}
+                      to={`/dashboard/edit_employee/${e.id}`}
                     >
                       <FaEdit size={20} className='cursor-pointer' />
                     </Link>
