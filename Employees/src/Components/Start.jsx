@@ -6,7 +6,7 @@ const Start = () => {
 
     useEffect(() => {
         axios.defaults.withCredentials = true;
-        axios.get('https://employee-api-gy30.onrender.com/verify')
+        axios.get('http://localhost:3000/verify')
         .then(result => {
             if (result.data.Status) {
                if (result.data.role === "admin") {

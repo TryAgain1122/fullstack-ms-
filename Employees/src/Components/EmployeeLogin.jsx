@@ -13,7 +13,7 @@ const EmployeeLogin = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         axios.defaults.withCredentials = true
-        axios.post('https://employee-api-gy30.onrender.com/employee_login', values)
+        axios.post('http://localhost:3000/employee_login', values)
         .then(result => {
             if (result.data.loginStatus) {
                 localStorage.setItem("valid", true)

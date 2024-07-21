@@ -19,7 +19,7 @@ const EditEmployee = () => {
     })
 
     useEffect(() => {
-       axios.get("https://employee-api-dp5h.onrender.com/auth/category")
+       axios.get("http://localhost:3000/auth/category")
             .then((result) => {
                 if (result.data.Status) {
                     setCategory(result.data.Result);
@@ -29,7 +29,7 @@ const EditEmployee = () => {
             })
             .catch((err) => console.log(err));
 
-            axios.get('https://employee-api-dp5h.onrender.com/auth/employee/'+id)
+            axios.get('http://localhost:3000/auth/employee/'+id)
             .then(result => {
                 setEmployee({
                     ...employee,
@@ -43,7 +43,7 @@ const EditEmployee = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.put('https://employee-api-gy30.onrender.com/auth/edit_employee/'+id, employee)
+        axios.put('http://localhost:3000/auth/edit_employee/'+id, employee)
         .then(result => {
             if (result.data.Status) {
                 navigate('/dashboard/employee')

@@ -19,7 +19,7 @@ const AddEmployee = () => {
 
     useEffect(() => {
         axios
-            .get("https://employee-api-dp5h.onrender.com/auth/category")
+            .get("http://localhost:3000/auth/category")
             .then((result) => {
                 if (result.data.Status) {
                     setCategory(result.data.Result);
@@ -42,7 +42,7 @@ const AddEmployee = () => {
         formData.append('image', employee.image);
         formData.append('category_id', employee.category_id)
 
-        axios.post('https://employee-api-gy30.onrender.com/auth/add_employee', formData)
+        axios.post('http://localhost:3000/auth/add_employee', formData)
             .then(result => {
                 console.log(result.data)
                 if (result.data.Status) {

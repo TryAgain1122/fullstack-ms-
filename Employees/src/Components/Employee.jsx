@@ -12,7 +12,7 @@ const Employee = () => {
   const [employee, setEmployee] = useState([]);
 
   useEffect(() => {
-    axios.get("https://employee-api-gy30.onrender.com/auth/employee")
+    axios.get("http://localhost:3000/auth/employee")
       .then((result) => {
         if (result.data.Status) {
           setEmployee(result.data.Result);
@@ -25,7 +25,7 @@ const Employee = () => {
 
   //Delete actions
   const handleDelete = (id) => {
-    axios.delete('https://employee-api-gy30.onrender.com/auth/delete_employee/' + id)
+    axios.delete('http:/localhost:3000/auth/delete_employee/' + id)
       .then(result => {
         if (result.data.Status) {
           window.location.reload();
@@ -72,7 +72,7 @@ const Employee = () => {
                   <td className={tableStyles}>
                     <img
                       key={e.id}
-                      src={`https://employee-api-gy30.onrender.com/Images/` + e.image}
+                      src={`http://localhost:3000/Images/` + e.image}
                       className="employee_image"
                       alt='no-image'
                     />
