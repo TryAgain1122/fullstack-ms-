@@ -16,7 +16,7 @@ const Home = () => {
   },[])
 
   const AdminRecords = () => {
-    axios.get('https://employee-ms-seven.vercel.app/auth/admin_records')
+    axios.get('https://employee-backend-seven.vercel.app/auth/admin_records')
     .then(result => {
       if (result.data.Status) {
         setAdmins(result.data.Result)
@@ -27,7 +27,7 @@ const Home = () => {
   }
 
   const adminCount = () => {
-    axios.get('https://employee-ms-seven.vercel.app/auth/admin_count')
+    axios.get('https://employee-backend-seven.vercel.app/auth/admin_count')
     .then(result => {
       if(result.data.Status) {
         setAdminTotal(result.data.Result[0].admin)
@@ -36,7 +36,7 @@ const Home = () => {
   }
 
   const employeeCount = () => {
-    axios.get('https://employee-ms-seven.vercel.app/auth/employee_count')
+    axios.get('https://employee-backend-seven.vercel.app/auth/employee_count')
     .then(result => {
       if(result.data.Status) {
         setEmployeeTotal(result.data.Result[0].employee)
@@ -45,7 +45,7 @@ const Home = () => {
   }
 
   const salaryCount = () => {
-    axios.get('https://employee-ms-seven.vercel.app/auth/salary_count')
+    axios.get('https://employee-backend-seven.vercel.app/auth/salary_count')
     .then(result => {
       if (result.data.Status) {
         setSalaryTotal(result.data.Result[0].salaryOfEmp)
@@ -56,7 +56,7 @@ const Home = () => {
   }
 
   const handleDelete = (id) => {
-    axios.delete('https://employee-ms-seven.vercel.app/auth/delete_admin/' + id)
+    axios.delete('https://employee-backend-seven.vercel.app/auth/delete_admin/' + id)
       .then(result => {
         if (result.data.Status) {
           window.location.reload();
