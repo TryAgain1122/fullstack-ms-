@@ -7,7 +7,7 @@ const EmployeeDetail = () => {
     const [employee, setEmployee] = useState([])
     const { id } = useParams()
     useEffect(() => {
-        axios.get(`https://employee-ms-seven.vercel.app/employee/detail/${id}`)
+        axios.get(`https://employee-backend-seven.vercel.app/employee/detail/${id}`)
         .then(result => {
             setEmployee(result.data[0])
         })
@@ -15,7 +15,7 @@ const EmployeeDetail = () => {
     },[])
     
     const handleLogout = () => {
-        axios.get('https://employee-ms-seven.vercel.app/employee/logout')
+        axios.get('https://employee-backend-seven.vercel.app/employee/logout')
         .then(result => {
             if (result.data.Status) {
                 localStorage.removeItem("valid", true)
@@ -30,7 +30,7 @@ const EmployeeDetail = () => {
         <div className="flex flex-col items-center">
           <img 
             className="w-24 h-24 rounded-full shadow-lg object-cover" 
-            src={`https://employee-ms-seven.vercel.app/Images/${employee.image}`}
+            src={`https://employee-backend-seven.vercel.app/Images/${employee.image}`}
             alt="Profile" 
           />
           <p className="mt-2 text-gray-600">Work id: {employee.category_id}</p>
