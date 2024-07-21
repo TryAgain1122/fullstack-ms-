@@ -25,7 +25,7 @@ const Employee = () => {
 
   //Delete actions
   const handleDelete = (id) => {
-    axios.delete('https://backend-api-uo05.onrender.com/auth/delete_employee/' + id)
+    axios.delete(`https://backend-api-uo05.onrender.com/auth/delete_employee/${id}`)
       .then(result => {
         if (result.data.Status) {
           window.location.reload();
