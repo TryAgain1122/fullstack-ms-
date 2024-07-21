@@ -12,7 +12,7 @@ const Employee = () => {
   const [employee, setEmployee] = useState([]);
 
   useEffect(() => {
-    axios.get("https://backend-k8aw.onrender.com/auth/employee")
+    axios.get("https://backend-api-uo05.onrender.com/auth/employee")
       .then((result) => {
         if (result.data.Status) {
           setEmployee(result.data.Result);
@@ -25,7 +25,7 @@ const Employee = () => {
 
   //Delete actions
   const handleDelete = (id) => {
-    axios.delete('https://backend-k8aw.onrender.com/auth/delete_employee/' + id)
+    axios.delete('https://backend-api-uo05.onrender.com/auth/delete_employee/' + id)
       .then(result => {
         if (result.data.Status) {
           window.location.reload();
@@ -72,7 +72,7 @@ const Employee = () => {
                   <td className={tableStyles}>
                     <img
                       key={e.id}
-                      src={`https://backend-k8aw.onrender.com/Images/` + e.image}
+                      src={`https://backend-api-uo05.onrender.com/Images/` + e.image}
                       className="employee_image"
                       alt='no-image'
                     />
