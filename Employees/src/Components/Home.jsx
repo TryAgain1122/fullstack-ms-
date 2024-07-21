@@ -16,7 +16,7 @@ const Home = () => {
   },[])
 
   const AdminRecords = () => {
-    axios.get('https://backend-k8aw.onrender.com/auth/admin_records')
+    axios.get('https://backend-api-uo05.onrender.com/auth/admin_records')
     .then(result => {
       if (result.data.Status) {
         setAdmins(result.data.Result)
@@ -27,7 +27,7 @@ const Home = () => {
   }
 
   const adminCount = () => {
-    axios.get('https://backend-k8aw.onrender.com/auth/admin_count')
+    axios.get('https://backend-api-uo05.onrender.com/auth/admin_count')
     .then(result => {
       if(result.data.Status) {
         setAdminTotal(result.data.Result[0].admin)
@@ -36,7 +36,7 @@ const Home = () => {
   }
 
   const employeeCount = () => {
-    axios.get('https://backend-k8aw.onrender.com/auth/employee_count')
+    axios.get('https://backend-api-uo05.onrender.com/auth/employee_count')
     .then(result => {
       if(result.data.Status) {
         setEmployeeTotal(result.data.Result[0].employee)
@@ -45,7 +45,7 @@ const Home = () => {
   }
 
   const salaryCount = () => {
-    axios.get('https://backend-k8aw.onrender.com/auth/salary_count')
+    axios.get('https://backend-api-uo05.onrender.com/auth/salary_count')
     .then(result => {
       if (result.data.Status) {
         setSalaryTotal(result.data.Result[0].salaryOfEmp)
