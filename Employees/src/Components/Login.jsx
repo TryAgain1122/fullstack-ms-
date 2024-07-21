@@ -12,7 +12,7 @@ export const Login = () => {
     axios.defaults.withCredentials = true;
     const handleSubmit = (event) => {
         event.preventDefault()
-        axios.post('https://employee-backend-seven.vercel.app/adminlogin', values)
+        axios.post('https://backend-k8aw.onrender.com/adminlogin', values)
             .then(result => {
                 if (result.data.loginStatus) {
                     localStorage.setItem("valid", true)

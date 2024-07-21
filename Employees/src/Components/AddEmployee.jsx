@@ -19,7 +19,7 @@ const AddEmployee = () => {
 
     useEffect(() => {
         axios
-            .get("https://employee-backend-seven.vercel.app/auth/category")
+            .get("https://backend-k8aw.onrender.com/auth/category")
             .then((result) => {
                 if (result.data.Status) {
                     setCategory(result.data.Result);
@@ -42,7 +42,7 @@ const AddEmployee = () => {
         formData.append('image', employee.image);
         formData.append('category_id', employee.category_id)
 
-        axios.post('https://employee-backend-seven.vercel.app/auth/add_employee', formData)
+        axios.post('https://backend-k8aw.onrender.com/auth/add_employee', formData)
             .then(result => {
                 console.log(result.data)
                 if (result.data.Status) {

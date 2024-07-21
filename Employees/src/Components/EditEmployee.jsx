@@ -19,7 +19,7 @@ const EditEmployee = () => {
     })
 
     useEffect(() => {
-       axios.get("https://employee-backend-seven.vercel.app/auth/category")
+       axios.get("https://backend-k8aw.onrender.com/auth/category")
             .then((result) => {
                 if (result.data.Status) {
                     setCategory(result.data.Result);
@@ -29,7 +29,7 @@ const EditEmployee = () => {
             })
             .catch((err) => console.log(err));
 
-            axios.get('https://employee-backend-seven.vercel.app/auth/employee/'+id)
+            axios.get('https://backend-k8aw.onrender.com/auth/employee/'+id)
             .then(result => {
                 setEmployee({
                     ...employee,
@@ -43,7 +43,7 @@ const EditEmployee = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.put('https://employee-backend-seven.vercel.app/auth/edit_employee/'+id, employee)
+        axios.put('https://backend-k8aw.onrender.com/auth/edit_employee/'+id, employee)
         .then(result => {
             if (result.data.Status) {
                 navigate('/dashboard/employee')
