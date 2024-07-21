@@ -13,7 +13,7 @@ const EmployeeLogin = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         axios.defaults.withCredentials = true
-        axios.post('http://localhost:3000/employee_login', values)
+        axios.post('https://employee-backend-seven.vercel.app/employee_login', values)
         .then(result => {
             if (result.data.loginStatus) {
                 localStorage.setItem("valid", true)

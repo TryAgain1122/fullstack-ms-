@@ -12,7 +12,7 @@ const Employee = () => {
   const [employee, setEmployee] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3000/auth/employee")
+    axios.get("https://employee-backend-seven.vercel.app/auth/employee")
       .then((result) => {
         if (result.data.Status) {
           setEmployee(result.data.Result);
@@ -25,7 +25,7 @@ const Employee = () => {
 
   //Delete actions
   const handleDelete = (id) => {
-    axios.delete('http:/localhost:3000/auth/delete_employee/' + id)
+    axios.delete('https://employee-backend-seven.vercel.app/auth/delete_employee/' + id)
       .then(result => {
         if (result.data.Status) {
           window.location.reload();
